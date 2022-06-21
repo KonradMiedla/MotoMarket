@@ -1,0 +1,144 @@
+body
+{
+    font-family: 'Quicksand', sans-serif;
+}
+
+a
+{
+    text-decoration: none;
+	color: inherit!important;
+}
+
+.navbar-brand > img:hover
+{
+	opacity: 0.8;
+}
+
+.navbar .navbar-collapse 
+{
+	text-align: center;
+	opacity: 1;
+}
+
+nav
+{
+	background-color: #d9d9d9;
+}
+
+.nav-link:hover
+{
+	color: #029f5b!important;
+}
+
+.btn
+{
+	background-color: #029f5b;
+}
+
+.btn:hover
+{
+	background-color: #048544;
+}
+
+.userBtn
+{
+	background-color: #dc3545;
+}
+
+.userBtn:hover
+{
+	background-color: #c72838;
+}
+
+#addDisplayImage
+{
+	height: 169px;
+	width: 300px;
+	border: 1px solid black;
+}
+
+#userImage
+{
+	height: 169px;
+	width: 300px;
+	border: 1px solid black;
+}
+
+#indexImage
+{
+	height: 169px;
+	width: 300px;
+	border: 1px solid black;
+}
+
+.navbar-brand > img
+{
+	height: 75px;
+	width: 200px;
+}
+#displayImage
+{
+	width: 750px;
+	border: 1px solid black;
+}
+#list > li > a
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+#list > li:hover
+{	
+	border-bottom: 1px solid #029f5b;
+}
+
+.g-recaptcha>div
+{
+	width: auto !important;
+}
+
+.active
+{
+	border-bottom: 2px solid #029f5b !important;
+}
+
+#regulationA
+{
+	color: blue!important;
+}
+
+#menu > div > a
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+#copy
+{
+	background-color: #d9d9d9;
+}
+
+small.d-none
+{
+	padding-top: 0.2rem;
+}
+
+#viewDescription
+{
+	text-align: justify;
+	line-height: 1.5;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+

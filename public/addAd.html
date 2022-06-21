@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>MotoMarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+        rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="MotoMarket.png">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" id="addAd" href="addAd.html"><h5 class="fw-bold">Dodaj ogłoszenie</h5></a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" id="log&register" href="log&register.html"><h5 class="fw-bold">Logowanie | Rejestracja</h5></a>
+              </li>
+              <li class="nav-item">
+                  <a id="nick" class="nav-link" href="userSettings.html"></a>
+                  <a id="logout" class="nav-link" href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <section class="intro">
+
+        <div class="container mb-5 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="card">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2">Stwórz ogłoszenie</h3>
+                            <div>
+                                <h5>Informacje podstawowe</h5>
+                            </div> 
+                            <div class="row mb-4">
+                                <div class="col-12 col-md-4">
+                                    <small class="text-muted">Numer rejestracyjny</small>
+                                    <input class="form-control" type="text" id="addPlates" placeholder="np. SC4554X">
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <small class="text-muted">Numer VIN</small>
+                                    <input class="form-control" type="text" id="addVIN" placeholder="np. WVGZZZ5NZ8W031284">
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <small class="text-muted">Przebieg</small>
+                                    <div class="input-group">
+                                        <input class="form-control" type="number" id="addMileage" placeholder="np. 170 000">
+                                        <span class="input-group-text">km</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-5">
+                                <h5>Dane techniczne</h5>
+                            </div> 
+                            <div class="row mb-4">
+                                <div class="col-12 col-md-4">
+                                    <small class="text-muted">Marka</small>
+                                    <input class="form-control" type="text" id="addBrand" placeholder="np. Audi">
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <small class="text-muted">Model</small>
+                                    <input class="form-control" type="text" id="addModel" placeholder="np. A5">
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <small class="text-muted">Rok produkcji</small>
+                                    <input class="form-control" type="number" id="addYear" placeholder="Rok">
+                                </div>
+                            </div>
+                        
+                                <div class="row mb-4">
+                                    <div class="col-12 col-md-4">
+                                        <small class="text-muted">Rodzaj paliwa</small>
+                                    <select class="form-select" id="addFuelType">
+                                        <option selected hidden>Wybierz</option>
+                                        <option value="Benzyna">Benzyna</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Benzyna+LPG">Benzyna+LPG</option>
+                                        <option value="Hybryda">Hybryda</option>
+                                        <option value="Elektryczny">Elektryczny</option>
+                                        <option value="Inny">Inny</option>
+                                    </select>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <small class="text-muted">Skrzynia biegów</small>
+                                    <select class="form-select" id="addGear">
+                                        <option selected hidden>Wybierz</option>
+                                        <option value="Manualna">Manualna</option>
+                                        <option value="Automatyczna">Automatyczna</option>
+                                        <option value="Półautomatyczna">Półautomatyczna</option>
+                                    </select>
+                                </div>
+                                    <div class="col-12 col-md-4">
+                                        <small class="text-muted">Napęd</small>
+                                    <select class="form-select" id="addWheelDrive">
+                                        <option selected hidden>Wybierz</option>
+                                        <option value="Na przednie koła">Na przednie koła</option>
+                                        <option value="Na tylne koła">Na tylne koła</option>
+                                        <option value="4x4(stały)">4x4(stały)</option>
+                                        <option value="4x4(dołączany ręcznie)">4x4(dołączany ręcznie)</option>
+                                        <option value="4x4(dołączany automatycznie)">4x4(dołączany automatycznie)</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-4">
+                                        <small class="text-muted">Pojemność skokowa</small>
+                                        <div class="input-group">
+                                            <input class="form-control input-group" type="number" id="addEngineCapacity" placeholder="np. 4 163" min="1">
+                                            <span class="input-group-text">[cm<sup>3</sup>]</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small class="text-muted">Cena</small>
+                                        <div class="input-group">
+                                            <input class="form-control" type="number" id="addPrice" placeholder="np. 19 700">
+                                            <span class="input-group-text">PLN</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small class="text-muted">Moc</small>
+                                        <div class="input-group">
+                                            <input class="form-control" type="number" id="addPower" placeholder="np. 270">
+                                            <span class="input-group-text">KM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5>Opis pojazdu</h5>
+                                </div> 
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <small class="text-muted">Tytuł ogłoszenia</small>
+                                        <input class="form-control" type="text" id="addTitle" placeholder="np. pierwszy właściciel, bezwypadkowy, wymienione zawieszenie">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <small class="text-muted">Opis</small>
+                                        <textarea class="form-control" id="addTextArea" 
+                                        rows="4" cols="50"style="resize: none;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5>Dane sprzedającego</h5>
+                                </div> 
+                                <div class="row mb-4">
+                                    <div class="col-12 col-md-3">
+                                        <small class="text-muted">Twoje imię</small>
+                                        <input class="form-control" type="text" id="addName" placeholder="Twoje imię">
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        <small class="text-muted">Miejscowość</small>
+                                        <input class="form-control" type="text" id="addCity" placeholder="Wpisz miejscowość">
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <small class="text-muted">Numer telefonu</small>
+                                        <input class="form-control" type="number" id="addTelephone" placeholder="np. 123456789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+                                    </div>
+                                </div>
+                                <div class="mt-5">
+                                    <h5>Zdjęcia</h5>
+                                </div> 
+                                    <div class="row mb-4">
+                                        <div class="col-md-8 mx-auto">
+                                            <small class="text-muted">Dodaj zdjęcie</small>
+                                            <input type="file" class="form-control" id="image">
+                                            <small class="text-muted">Zdjęcie najlepiej dodać w proporcjach 16:9 w formacie .jpg lub .png</small>
+                                        </div>
+                                        <div class="text-center mt-5">
+                                            <img class="rounded" id="addDisplayImage" accept="image/png, image/jpg" src="http://placehold.jp/300x169.png">
+                                        </div>
+                                    </div>
+                                <div class="row mt-5">
+                                    <div class="col d-flex justify-content-end">
+                                        <small class="text-muted text-center" id="smallButton"></small>
+                                    </div>
+                                    <div class="col d-flex justify-content-end" style="cursor: not-allowed;">
+                                        <button class="btn btn-secondary" type="submit" id="addAdButton" disabled>Dodaj ogłoszenie</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <footer class="text-center text-lg-start text-muted">
+        <section class="d-flex justify-content-center p-4 bg-light">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            MotoMarket
+                        </h6>
+                        <p>
+                          MotoMarket to witryna z darmowymi ogłoszeniami samochodów, 
+                          dzięki której łatwiej pozyskasz potencjalnych kupców jak i znajdziesz swój wymarzony pojazd.
+                        </p>
+                    </div>
+    
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Prywatność
+                        </h6>
+                        <p>
+                            <a href="statute.html" class="me-4 text-reset">Regulamin MotoMarket</a>
+                        </p>
+                        <p>
+                            <a href="privacyPolicy.html" class="me-4 text-reset">Polityka prywatności</a>
+                        </p>
+                    </div>
+    
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Przydatne linki
+                        </h6>
+                        <p>
+                            <a href="userSettings.html" class="text-reset" id="use-links-myAcc">Moje konto</a>
+                        </p>
+                        <p>
+                            <a href="addAd.html" class="text-reset" id="use-links-addAd">Dodaj ogłoszenie</a>
+                        </p>
+                        <p>
+                          <a href="log&register.html" class="text-reset" id="use-links-createAcc">Załóż konto</a>
+                        </p>
+                    </div>
+    
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Kontakt
+                        </h6>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@motomarket.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone me-3"></i>
+                            +48 123 456 789
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-top" id="copy">
+            <div class="me-5">
+                © Copyright 2022 by MotoMarket. Wszystkie prawa zastrzeżone.
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset" target="_blank">
+                    <i class="fab fa-facebook-square fa-lg"></i>
+                </a>
+                <a href="" class="me-4 text-reset" target="blank">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="" class="me-4 text-reset" target="_blank">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+        crossorigin="anonymous">
+    </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#addYear").datepicker({
+                format: "yyyy",
+                viewMode: "years",
+                minViewMode: "years",
+                autoclose: true
+            });
+        })
+    </script>
+    <script>
+            var addAdBtn = document.getElementById("addAdButton");
+            var plates = document.getElementById("addPlates");
+            var VIN = document.getElementById("addVIN");
+            var mileage = document.getElementById("addMileage");
+            var brand = document.getElementById("addBrand");
+            var model = document.getElementById("addModel");
+            var year = document.getElementById("addYear");
+            var fuelType = document.getElementById("addFuelType");
+            var gear = document.getElementById("addGear");
+            var wheelDrive = document.getElementById("addWheelDrive");
+            var engineCapacity = document.getElementById("addEngineCapacity");
+            var price = document.getElementById("addPrice");
+            var power = document.getElementById("addPower");
+            var title = document.getElementById("addTitle");
+            var description = document.getElementById("addTextArea");
+            var personName = document.getElementById("addName");
+            var city = document.getElementById("addCity");
+            var telephone = document.getElementById("addTelephone");
+            var file = document.querySelector('#image');
+            var small = document.getElementById('smallButton');
+            deactive();
+
+            function active()
+            {
+                addAdBtn.disabled = false;
+                small.innerHTML = "";
+            }
+
+            function deactive()
+            {
+                addAdBtn.disabled = true;
+                small.innerHTML = "Aby dodać ogłoszenie musisz uzupełnić wszystkie pola.";
+            }
+
+            function check()
+            {
+                if(plates.value != "" && VIN.value != "" && mileage.value != "" && brand.value != "" &&
+                    model.value != "" && year.value != "" && fuelType.value != "Wybierz" && 
+                    gear.value != "Wybierz" && wheelDrive.value != "Wybierz" && engineCapacity.value != "" && 
+                    price.value != "" && power.value != "" && title.value != "" && 
+                    description.value != "" && personName.value != "" && city.value != "" &&
+                    telephone.value != "" && file.value != "")
+                {
+                    active();
+                }
+                else
+                {
+                    deactive();
+                }
+            }
+
+            plates.addEventListener('input', check);
+            VIN.addEventListener('input', check);
+            mileage.addEventListener('input', check);
+            brand.addEventListener('input', check);
+            model.addEventListener('input', check);
+            year.addEventListener('input', check);
+            fuelType.addEventListener('input', check);
+            gear.addEventListener('input', check);
+            wheelDrive.addEventListener('input', check);
+            engineCapacity.addEventListener('input', check);
+            price.addEventListener('input', check);
+            power.addEventListener('input', check);
+            title.addEventListener('input', check);
+            description.addEventListener('input', check);
+            personName.addEventListener('input', check);
+            city.addEventListener('input', check);
+            telephone.addEventListener('input', check);
+            file.addEventListener('input', check);
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getDatabase, set, update, ref, child } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+        import { getStorage, ref as sRef, getDownloadURL, uploadBytes } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-storage.js";
+        import {
+            getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+            onAuthStateChanged, signOut} 
+            from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBlMR02T_Em1KhTTpX8RnnipDUqOau9grA",
+            authDomain: "motomarket-37668.firebaseapp.com",
+            databaseURL: "https://motomarket-37668-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "motomarket-37668",
+            storageBucket: "motomarket-37668.appspot.com",
+            messagingSenderId: "715586433513",
+            appId: "1:715586433513:web:34520927576e02111c5b78",
+            measurementId: "G-3FH4J49EM0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        //const analytics = getAnalytics(app);
+        const database = getDatabase(app);
+        const auth = getAuth();
+        const storage = getStorage();
+        const user = auth.currentUser;
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const user = auth.currentUser;
+                const displayName = user.displayName
+                const uid = user.uid;
+
+                document.getElementById("nick").innerHTML = "<h5 class='fw-bold'><i class='fas fa-user'></i> "
+                + displayName + "</h5>";
+                document.getElementById("logout").innerHTML = "<h5 class='fw-bold'>Wyloguj<h5>";
+                document.getElementById("log&register").style.display = "none";
+                document.getElementById("use-links-createAcc").style.display = "none";
+                window.sessionStorage.setItem("userUid", uid);
+            }
+            else {
+                document.getElementById("addAd").style.display = "none";
+                document.getElementById("use-links-myAcc").style.display = "none";
+                document.getElementById("use-links-addAd").style.display = "none";
+            }
+        });
+
+        logout.addEventListener('click', (e) => {
+            signOut(auth).then(() => {
+                alert("Wylogowano!");
+                window.location.href = "index.html";
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                console.log(errorCode + ": " + errorMessage);
+            });
+        });
+
+        addAdButton.addEventListener('click', (e) => {
+            const plates = document.getElementById("addPlates").value;
+            const VIN = document.getElementById("addVIN").value;
+            const mileage = +document.getElementById("addMileage").value;
+            const brand = document.getElementById("addBrand").value;
+            const model = document.getElementById("addModel").value;
+            const year = +document.getElementById("addYear").value;
+            const fuelType = document.getElementById("addFuelType").value;
+            const gear = document.getElementById("addGear").value;
+            const wheelDrive = document.getElementById("addWheelDrive").value;
+            const engineCapacity = +document.getElementById("addEngineCapacity").value;
+            const price = +document.getElementById("addPrice").value;
+            const power = +document.getElementById("addPower").value;
+            const title = document.getElementById("addTitle").value;
+            const description = document.getElementById("addTextArea").value;
+            const personName = document.getElementById("addName").value;
+            const city = document.getElementById("addCity").value;
+            const telephone = +document.getElementById("addTelephone").value;
+
+            var uid = auth.currentUser.uid;
+            const dataTime = Date.now();
+
+            var file = document.querySelector('#image').files[0];
+            var name = file.name;
+            var storageRef = sRef(storage, 'images/' + uid + '/' + dataTime + '/' + name);
+            var metaData =
+            {
+                contentType: file.type
+            };
+
+            uploadBytes(storageRef, file, metaData).then(() => {
+                getDownloadURL(storageRef).then((url) =>
+                {
+                set(ref(database, 'ads/' + dataTime),
+                    {
+                        uid: uid,
+                        key: dataTime,
+                        plates: plates,
+                        VIN: VIN,
+                        mileage: mileage,
+                        brand: brand,
+                        model: model,
+                        year: year,
+                        fuelType: fuelType,
+                        gear: gear,
+                        wheelDrive: wheelDrive,
+                        engineCapacity: engineCapacity,
+                        price: price,
+                        power: power,
+                        title: title,
+                        description: description,
+                        personName: personName,
+                        city: city,
+                        telephone: telephone,
+                        url: url        
+                    }).then(() => {
+                        alert("Ogłoszenie zostało dodane!");
+                        window.location.href = "index.html";
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                    });
+                });
+            });
+        });
+
+        var imageBtn = document.querySelector('#image');
+        imageBtn.addEventListener('change', (e) =>
+        {
+            var image = document.getElementById("addDisplayImage");
+            image.src = URL.createObjectURL(event.target.files[0]);
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>MotoMarket</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="MotoMarket.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="addAd" href="addAd.html">
+              <h5 class="fw-bold">Dodaj ogłoszenie</h5>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="log&register" href="log&register.html">
+              <h5 class="fw-bold">Logowanie | Rejestracja</h5>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="nick" class="nav-link" href="userSettings.html"></a>
+            <a id="logout" class="nav-link" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--
+    <section class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-9 col-xl-7">
+                <div>
+                    <h3 id="helloNick"></h3>
+                </div>
+                <div>
+                    <div>
+                        <p>Zmień adres e-mail:</p>
+                        <input class="form-control" type="email" id="newEmail">
+                        <p id="showEmail"></p>
+                    </div>
+                    <button class="btn btn-secondary" id="changeEmail">Zmień e-mail</button>
+                </div>
+                <div>
+                    <p>Zmiana hasła:</p>
+                    <input class="form-control" type="password" id="newPassword">
+                </div>
+                  <button class="btn btn-secondary" id="changePassword">Zmień hasło</button>
+                  <div>
+                    <p>Usunięcie konta wraz ze wszystkimi aktywnymi ogłoszeniami:</p>
+                    <button class="btn btn-secondary" id="deleteAccount">Usuń konto</button>
+                </div>
+          </div>
+          <div class="col-12 col-lg-9 col-xl-7">
+            <ul id="userAds"></ul>
+          </div>
+        </div>
+    </section>-->
+
+  <div class="container mt-5 mb-5">
+    <div class="row justify-content-md-center">
+      <div class="col-xl-5">
+        <div>
+          <h3 class="text-center" id="helloNick"></h3>
+        </div>
+        <div>
+          <div class="mt-4">
+            <span>Zmień adres e-mail:</span>
+            <input class="form-control" type="email" id="newEmail" placeholder="Nowy e-mail">
+            <p id="showEmail"></p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary" id="changeEmail">Zmień e-mail</button>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <div>
+            <span>Zmiana hasła:</span>
+            <input class="form-control" type="password" id="newPassword" placeholder="Nowe hasło">
+            <br>
+            <input class="form-control" type="password" id="newPassword1" placeholder="Powtórz nowe hasło">
+            <br>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary" id="changePassword">Zmień hasło</button>
+          </div>
+        </div>
+        <hr>
+        <div>
+          <p>Usunięcie konta wraz ze wszystkimi aktywnymi ogłoszeniami:</p>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-secondary mb-5" id="deleteAccount">Usuń konto</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-7">
+        <h3 class="text-center">Twoje aktualne ogłoszenia:</h3>
+        <ul class="list-group" id="userAds"></ul>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center text-lg-start text-muted">
+    <section class="d-flex justify-content-center p-4 bg-light">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              MotoMarket
+            </h6>
+            <p>
+              MotoMarket to witryna z darmowymi ogłoszeniami samochodów,
+              dzięki której łatwiej pozyskasz potencjalnych kupców jak i znajdziesz swój wymarzony pojazd.
+            </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Prywatność
+            </h6>
+            <p>
+              <a href="statute.html" class="me-4 text-reset">Regulamin MotoMarket</a>
+            </p>
+            <p>
+              <a href="privacyPolicy.html" class="me-4 text-reset">Polityka prywatności</a>
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class="text-uppercase fw-bold mb-4">
+              Przydatne linki
+            </h6>
+            <p>
+              <a href="userSettings.html" class="text-reset" id="use-links-myAcc">Moje konto</a>
+            </p>
+            <p>
+              <a href="addAd.html" class="text-reset" id="use-links-addAd">Dodaj ogłoszenie</a>
+            </p>
+            <p>
+              <a href="log&register.html" class="text-reset" id="use-links-createAcc">Załóż konto</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Kontakt
+            </h6>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@motomarket.com
+            </p>
+            <p>
+              <i class="fas fa-phone me-3"></i>
+              +48 123 456 789
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-top" id="copy">
+      <div class="me-5">
+        © Copyright 2022 by MotoMarket. Wszystkie prawa zastrzeżone.
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset" target="_blank">
+          <i class="fab fa-facebook-square fa-lg"></i>
+        </a>
+        <a href="" class="me-4 text-reset" target="blank">
+          <i class="fab fa-twitter fa-lg"></i>
+        </a>
+        <a href="" class="me-4 text-reset" target="_blank">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </div>
+    </section>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+  <script src="log.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+    import { getDatabase, set, ref, update, onValue, remove } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+    import {
+      getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+      onAuthStateChanged, signOut, updateEmail, updatePassword, deleteUser
+    }
+      from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBlMR02T_Em1KhTTpX8RnnipDUqOau9grA",
+      authDomain: "motomarket-37668.firebaseapp.com",
+      databaseURL: "https://motomarket-37668-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "motomarket-37668",
+      storageBucket: "motomarket-37668.appspot.com",
+      messagingSenderId: "715586433513",
+      appId: "1:715586433513:web:34520927576e02111c5b78",
+      measurementId: "G-3FH4J49EM0"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const displayName = user.displayName;
+        const email = user.email;
+        const uid = user.uid;
+
+        document.getElementById("nick").innerHTML = "<h5 class='fw-bold'><i class='fas fa-user'></i> "
+          + displayName + "</h5>";
+        document.getElementById("logout").innerHTML = "<h5 class='fw-bold'>Wyloguj<h5>";
+        document.getElementById("showEmail").innerHTML = "Twój aktualny e-mail: <b>" + email + "</b>";
+        document.getElementById("log&register").style.display = "none";
+        document.getElementById("use-links-createAcc").style.display = "none";
+        window.sessionStorage.setItem("userUid", uid);
+      }
+      else {
+        document.getElementById("addAd").style.display = "none";
+        document.getElementById("use-links-myAcc").style.display = "none";
+        document.getElementById("use-links-addAd").style.display = "none";
+      }
+    });
+
+    logout.addEventListener('click', (e) => {
+      signOut(auth).then(() => {
+        alert("Wylogowano!");
+        window.location.href = "index.html";
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        console.log(errorCode + ": " + errorMessage)
+      });
+
+    });
+    deleteAccount.addEventListener('click', (e) => {
+      deleteUser(auth.currentUser).then(() => {
+        const userUid = window.sessionStorage.getItem("userUid");
+        remove(ref(database, 'users/' + userUid))
+          .then(() => {
+            const starCountRef = ref(database, 'ads/');
+            onValue(starCountRef, (snapshot) => {
+              snapshot.forEach(function (childSnapshot) {
+                var key = childSnapshot.key;
+                var childData = childSnapshot.val();
+                if (childData.uid == userUid) {
+                  remove(ref(database, 'ads/' + key))
+                }
+              });
+            });
+          }).then(() => {
+            window.location.href = "index.html";
+            alert("Konto zostało usunięte!");
+          });
+      }).catch((error) => {
+        const errorCode = error.code;
+      });
+    });
+
+    changeEmail.addEventListener('click', (e) => {
+      var newEmail = document.getElementById("newEmail").value;
+      const userUid = window.sessionStorage.getItem("userUid");
+      if (newEmail != "") {
+        updateEmail(auth.currentUser, newEmail).then(() => {
+          update(ref(database, 'users/' + userUid),
+            {
+              email: newEmail
+            })
+          window.location.reload();
+          alert("E-mail został zmieniony!");
+        }).catch((error) => {
+          const errorCode = error.code;
+          if (errorCode == "auth/invalid-email") {
+            alert("Podany e-mail jest nieprawidłowy! Możliwe, że brakuje znaku '@' lub '.pl/.com'");
+          }
+          if (errorCode == "auth/requires-recent-login") {
+            alert("Wyloguj się a następnie spróbuj zmienić e-mail ponownie!");
+          }
+        });
+      }
+      else {
+        alert("Pole 'Nowy e-mail' nie może być puste!")
+      }
+    });
+
+    changePassword.addEventListener('click', (e) => {
+      var newPassword = document.getElementById("newPassword").value;
+      var newPassword1 = document.getElementById("newPassword1").value;
+      if (newPassword != "" || newPassword1 != "") {
+        if (newPassword == newPassword1) {
+          updatePassword(auth.currentUser, newPassword).then(() => {
+            window.location.reload();
+            alert("Hasło zostało zmienione!");
+          }).catch((error) => {
+            const errorCode = error.code;
+            if (errorCode == "auth/requires-recent-login") {
+              alert("Wyloguj się a następnie spróbuj zmienić hasło ponownie!");
+            }
+            if (errorCode == "auth/weak-password") {
+              alert("Hasło powinno zawierać co najmniej 6 znaków!");
+            }
+          });
+        }
+        else {
+          alert("Podane hasła muszą być takie same! Spróbuj jeszcze raz.");
+          window.location.reload();
+        }
+      }
+      else {
+        alert("Pole 'Nowe hasło' lub 'Powtórz nowe hasło' nie mogą być puste!");
+      }
+    });
+
+    const starCountRef = ref(database, 'ads/');
+    onValue(starCountRef, (snapshot) => {
+      const userUid = window.sessionStorage.getItem("userUid");
+      snapshot.forEach(function (childSnapshot) {
+        var key = childSnapshot.key;
+        var childData = childSnapshot.val();
+        var commentElement =
+          `<li class="list-group-item">
+            <div class="row mt-1 mb-1">
+              <div class="col-md-6 d-none d-md-block">
+                <img class="img-fluid" src="${childData.url}" id="userImage"></img>
+              </div>
+              <div class="col-md-5 col-10">
+                <span>${childData.brand} ${childData.model} ${childData.year}r.</span>
+                <p>Cena: ${childData.price.toLocaleString()} PLN</p>
+              </div>
+              <div class="col-md-1 col-2">
+                <button type="button" class="btn btn-danger btn-sm btn-block rounded-0 h-100 userBtn" id="${key}">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </li>`;
+
+        if (userUid == childData.uid) {
+          $("#userAds").append(commentElement);
+          var k = document.getElementById(key);
+          k.addEventListener("click", (e) => {
+            remove(ref(database, 'ads/' + k.id))
+              .then(() => {
+                alert("Twoje ogłoszenie zostało usunięte!");
+                window.location.reload();
+              })
+              .catch((error) => {
+                alert("Wystąpił błąd: " + error);
+              });
+            $("#userAds").empty();
+          });
+        }
+      });
+
+      if ($('#userAds li').length == 0) {
+        document.getElementById("userAds").innerHTML =
+          `<div class="d-flex justify-content-center mt-4">
+              <h5>Aktualnie nie masz żadnego aktywnego ogłoszenia</h5>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+              <a href="addAd.html"><button class="btn btn-secondary">Dodaj ogłoszenie</button></a>
+            </div>`
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

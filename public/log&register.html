@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>MotoMarket</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="MotoMarket.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="addAd" href="addAd.html">
+                            <h5 class="fw-bold">Dodaj ogłoszenie</h5>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="log&register" href="log&register.html">
+                            <h5 class="fw-bold">Logowanie | Rejestracja</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nick" class="nav-link" href="userSettings.html"></a>
+                        <a id="logout" class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mb-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card">
+                    <div class="card-body mb-3">
+                        <div class="row text-center" id="menu">
+                            <div class="col-6 active" id="loginDiv">
+                                <a href="#" class="" id="login-form-link">
+                                    <h5>Logowanie</h5>
+                                </a>
+                            </div>
+                            <div class="col-6" id="registerDiv">
+                                <a href="#" id="register-form-link">
+                                    <h5>Rejestracja</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row justify-content-center">
+                            <div class="col-10 mt-2">
+                                <div id="login-form" style="display: block;">
+                                    <div class="form-group ml-5 mb-3">
+                                        <small class="text-muted">E-mail</small>
+                                        <input type="email" name="emailL" id="emailL" class="form-control"
+                                            placeholder="E-mail">
+                                    </div>
+                                    <div class="form-group ml-5 mb-3">
+                                        <small class="text-muted">Hasło</small>
+                                        <input type="password" name="passwordL" id="passwordL" class="form-control"
+                                            placeholder="Hasło">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-4 col-6">
+                                                <button type="submit" name="loginSubmit" id="loginSubmit"
+                                                    class="form-control btn btn-login">Zaloguj się</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="register-form" style="display: none;">
+                                    <div class="form-group mb-3">
+                                        <small class="text-muted">Nazwa użytkownika</small>
+                                        <input type="text" name="usernameR" id="usernameR" class="form-control"
+                                            placeholder="Użytkownik123" value="">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <small class="text-muted">E-mail</small>
+                                        <input type="email" name="emailR" id="emailR" class="form-control"
+                                            placeholder="przykład@poczta.pl" value="">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <small class="text-muted">Hasło</small>
+                                        <input type="password" name="passwordR" id="passwordR" class="form-control"
+                                            placeholder="Hasło">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <small class="text-muted">Powtórz hasło</small>
+                                        <input type="password" name="repeatPasswordR" id="repeatPasswordR"
+                                            class="form-control" placeholder="Powtórz hasło">
+                                    </div>
+                                    <div class="form-group text-center mb-3">
+                                        <input type="checkbox" id="regulationCheckbox">
+                                        <label>Akceptuję <a href="statute.html" target="_blank"
+                                                id="regulationA">regulamin</a></label>
+                                    </div>
+                                    <div class="form-group text-center mb-3">
+                                        <div class="g-recaptcha" data-sitekey="6LfPT-IeAAAAAPs85ZbjM2HJKsdLaqCNdC4sASQn"
+                                            data-callback="recaptcha_callback"></div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <div class="row justify-content-center">
+                                            <div class="col-md-4 col-6" style="cursor: not-allowed;">
+                                                <button type="submit" name="registerSubmit" id="registerSubmit"
+                                                    class="form-control btn btn-register" disabled>Utwórz konto</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="text-center text-lg-start text-muted">
+        <section class="d-flex justify-content-center p-4 bg-light">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            MotoMarket
+                        </h6>
+                        <p>
+                            MotoMarket to witryna z darmowymi ogłoszeniami samochodów,
+                            dzięki której łatwiej pozyskasz potencjalnych kupców jak i znajdziesz swój wymarzony pojazd.
+                        </p>
+                    </div>
+
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Prywatność
+                        </h6>
+                        <p>
+                            <a href="statute.html" class="me-4 text-reset">Regulamin MotoMarket</a>
+                        </p>
+                        <p>
+                            <a href="privacyPolicy.html" class="me-4 text-reset">Polityka prywatności</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Przydatne linki
+                        </h6>
+                        <p>
+                            <a href="userSettings.html" class="text-reset" id="use-links-myAcc">Moje konto</a>
+                        </p>
+                        <p>
+                            <a href="addAd.html" class="text-reset" id="use-links-addAd">Dodaj ogłoszenie</a>
+                        </p>
+                        <p>
+                            <a href="log&register.html" class="text-reset" id="use-links-createAcc">Załóż konto</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Kontakt
+                        </h6>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@motomarket.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone me-3"></i>
+                            +48 123 456 789
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-top" id="copy">
+            <div class="me-5">
+                © Copyright 2022 by MotoMarket. Wszystkie prawa zastrzeżone.
+            </div>
+            <div>
+                <a href="" class="me-4 text-reset" target="_blank">
+                    <i class="fab fa-facebook-square fa-lg"></i>
+                </a>
+                <a href="" class="me-4 text-reset" target="blank">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="" class="me-4 text-reset" target="_blank">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+    <script src="log.js"></script>
+    <script>
+        function recaptcha_callback() {
+            var registerSubmit = document.querySelector('#registerSubmit');
+            registerSubmit.removeAttribute('disabled');
+            registerSubmit.style.cursor = 'pointer';
+        }
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+        import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBlMR02T_Em1KhTTpX8RnnipDUqOau9grA",
+            authDomain: "motomarket-37668.firebaseapp.com",
+            databaseURL: "https://motomarket-37668-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "motomarket-37668",
+            storageBucket: "motomarket-37668.appspot.com",
+            messagingSenderId: "715586433513",
+            appId: "1:715586433513:web:34520927576e02111c5b78",
+            measurementId: "G-3FH4J49EM0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase(app);
+        const auth = getAuth();
+
+        registerSubmit.addEventListener('click', (e) => {
+            var username = document.getElementById('usernameR').value;
+            var password = document.getElementById('passwordR').value;
+            var repeatPassword = document.getElementById("repeatPasswordR").value
+            var email = document.getElementById('emailR').value;
+            var checkb = document.getElementById('regulationCheckbox').checked;
+            if (username != "") {
+                if (email != "") {
+                    if (password != "") {
+                        if (repeatPassword != "") {
+                            if (password == repeatPassword) {
+                                if (checkb == true) {
+                                    createUserWithEmailAndPassword(auth, email, password, username)
+                                        .then((userCredential) => {
+                                            const user = userCredential.user;
+
+                                            set(ref(database, 'users/' + user.uid),
+                                                {
+                                                    username: username,
+                                                    email: email
+                                                }).then(updateProfile(auth.currentUser, {
+                                                    displayName: username
+                                                }).then(() => {
+                                                    window.location.href = "index.html"
+                                                }))
+                                        })
+                                        .catch((error) => {
+                                            const errorCode = error.code;
+                                            if (errorCode == "auth/invalid-email") {
+                                                alert("Podany e-mail jest nieprawidłowy! Możliwe, że brakuje znaku '@' lub '.pl/.com'");
+                                            }
+                                            if (errorCode == "auth/email-already-in-use") {
+                                                alert("E-mail jest już zarejestrowany w naszym serwisie!");
+                                            }
+                                            if (errorCode == "auth/weak-password") {
+                                                alert("Hasło powinno zawierać co najmniej 6 znaków!");
+                                            }
+                                        });
+                                }
+                                else {
+                                    alert("Musisz zaakceptować regulamin!");
+                                }
+                            }
+                            else {
+                                alert("Podane hasła nie są identyczne!");
+                            }
+                        }
+                        else {
+                            alert("Uzupełnij pole: 'Powtórz hasło'")
+                        }
+                    }
+                    else {
+                        alert("Uzupełnij pole: 'Hasło'")
+                    }
+                }
+                else {
+                    alert("Uzupełnij pole: 'E-mail'");
+                }
+            }
+            else {
+                alert("Uzupełnij pole: 'Nazwa użytkownika'");
+            }
+        });
+
+        loginSubmit.addEventListener('click', (e) => {
+            var password = document.getElementById('passwordL').value;
+            var email = document.getElementById('emailL').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    const dataTime = new Date()
+
+                    update(ref(database, 'users/' + user.uid),
+                        {
+                            lastLogin: dataTime,
+                        }).then(() => {
+                            alert("Użytkownik zalogowany!");
+                            window.location.href = "index.html";
+                        })
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    console.log(errorCode)
+                    if (errorCode == "auth/wrong-password") {
+                        alert("Hasło jest błędne, spróbuj jeszcze raz!");
+                    }
+
+                    if (errorCode == "auth/invalid-email" || errorCode == "auth/user-not-found") {
+                        alert("E-mail jest błędy, spróbuj jeszcze raz!");
+                    }
+                });
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const user = auth.currentUser;
+                const displayName = user.displayName;
+                const uid = user.uid;
+
+                document.getElementById("nick").innerHTML = "<h5 class='fw-bold'><i class='fas fa-user'></i> "
+                    + displayName + "</h5>";
+                document.getElementById("logout").innerHTML = "<h5 class='fw-bold'>Wyloguj<h5>";
+                document.getElementById("log&register").style.display = "none";
+                document.getElementById("use-links-createAcc").style.display = "none";
+            }
+            else {
+                document.getElementById("addAd").style.display = "none";
+                document.getElementById("use-links-myAcc").style.display = "none";
+                document.getElementById("use-links-addAd").style.display = "none";
+            }
+        });
+
+        logout.addEventListener('click', (e) => {
+            signOut(auth).then(() => {
+                alert("Wylogowano!");
+                window.location.href = "index.html";
+            }).catch((error) => {
+                const errorCode = error.code;
+            });
+        });
+    </script>
+</body>
+
+</html>

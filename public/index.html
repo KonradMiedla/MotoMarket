@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>MotoMarket</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="MotoMarket.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="addAd" href="addAd.html"><h5 class="fw-bold">Dodaj ogłoszenie</h5></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="log&register" href="log&register.html"><h5 class="fw-bold">Logowanie | Rejestracja</h5></a>
+          </li>
+          <li class="nav-item">
+              <a id="nick" class="nav-link" href="userSettings.html"></a>
+              <a id="logout" class="nav-link" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="intro">
+ 
+    <div class="container mb-5 mt-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2">Znajdź swój przyszły samochód:</h3>
+
+              <form action="">
+
+                <div class="row ">
+                  <div class="col-md-6 mb-3">
+
+                    <div class="form-outline">
+                      <small class="text-muted">Marka</small>
+                      <select id="selectBrand" class="form-control">
+                        <option id="optionBrand" disabled selected>Wybierz markę</option>
+                      </select>
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 mb-3">
+
+                    <div class="form-outline">
+                      <small class="text-muted">Model</small>
+                      <select id="selectModel" class="form-control" disabled>
+                        <option selected disabled>Wybierz model</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <div class="form-outline">
+                      <small class="text-muted">Rok produkcji</small>
+                      <input type="number" id="od" class="form-control" placeholder="od" />
+                    </div>
+
+                  </div>
+
+                  <div class="col-md-3 mb-3">
+                    <small class="text-muted d-none d-md-block"><br></small>
+                    <div class="form-outline">
+                      <input type="number" id="do" class="form-control" placeholder="do" />
+                    </div>
+
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <small class="text-muted">Rodzaj paliwa</small>
+                    <select class="form-select" id="selectFuel">
+                        <option selected hidden>Wybierz</option>
+                        <option value="Benzyna">Benzyna</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Benzyna+LPG">Benzyna+LPG</option>
+                        <option value="Hybryda">Hybryda</option>
+                        <option value="Elektryczny">Elektryczny</option>
+                        <option value="Inny">Inny</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <small class="text-muted">Cena</small>
+                      <div class="input-group">
+                          <input class="form-control" type="number" id="filterPriceOd" placeholder="od">
+                          <span class="input-group-text">PLN</span>
+                      </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <small class="text-muted d-none d-md-block"><br></small>
+                      <div class="input-group">
+                          <input class="form-control" type="number" id="filterPriceDo" placeholder="do">
+                          <span class="input-group-text">PLN</span>
+                      </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <small class="text-muted">Przebieg</small>
+                    <div class="input-group">
+                        <input class="form-control" type="number" id="filterMileageOd" placeholder="od">
+                        <span class="input-group-text">km</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <small class="text-muted d-none d-md-block"><br></small>
+                    <div class="input-group">
+                        <input class="form-control" type="number" id="filterMileageDo" placeholder="do">
+                        <span class="input-group-text">km</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">       
+                  <div class="col-12 mt-4 d-flex justify-content-end">
+                    <button class="btn btn-secondary btn-lg" id="search" type="submit">Szukaj</button>
+                  </div>    
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+    <div class="d-flex justify-content-sm-center">
+      <small class="list-group" id="dlugosc"></small>
+    </div>  
+    <div class="d-flex justify-content-sm-center mb-5">
+      <ul class="list-group" id="list"></ul>
+    </div>
+  
+
+  <footer class="text-center text-lg-start text-muted">
+    <section class="d-flex justify-content-center p-4 bg-light">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        MotoMarket
+                    </h6>
+                    <p>
+                      MotoMarket to witryna z darmowymi ogłoszeniami samochodów, 
+                      dzięki której łatwiej pozyskasz potencjalnych kupców jak i znajdziesz swój wymarzony pojazd.
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Prywatność
+                    </h6>
+                    <p>
+                        <a href="statute.html" class="me-4 text-reset">Regulamin MotoMarket</a>
+                    </p>
+                    <p>
+                        <a href="privacyPolicy.html" class="me-4 text-reset">Polityka prywatności</a>
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Przydatne linki
+                    </h6>
+                    <p>
+                        <a href="userSettings.html" class="text-reset" id="use-links-myAcc">Moje konto</a>
+                    </p>
+                    <p>
+                        <a href="addAd.html" class="text-reset" id="use-links-addAd">Dodaj ogłoszenie</a>
+                    </p>
+                    <p>
+                      <a href="log&register.html" class="text-reset" id="use-links-createAcc">Załóż konto</a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        Kontakt
+                    </h6>
+                    <p>
+                        <i class="fas fa-envelope me-3"></i>
+                        info@motomarket.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone me-3"></i>
+                        +48 123 456 789
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-top" id="copy">
+        <div class="me-5">
+            © Copyright 2022 by MotoMarket. Wszystkie prawa zastrzeżone.
+        </div>
+        <div>
+            <a href="" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-facebook-square fa-lg"></i>
+            </a>
+            <a href="" class="me-4 text-reset" target="blank">
+                <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a href="" class="me-4 text-reset" target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+        </div>
+    </section>
+</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#datepicker").datepicker({
+        format: "yyyy",
+        viewMode: "years",
+        minViewMode: "years",
+        autoclose: true,
+        maxDate: 0
+      });
+    })
+  </script>
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+    import { getDatabase, set, ref, update, get, onValue, child } 
+      from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } 
+      from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBlMR02T_Em1KhTTpX8RnnipDUqOau9grA",
+      authDomain: "motomarket-37668.firebaseapp.com",
+      databaseURL: "https://motomarket-37668-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "motomarket-37668",
+      storageBucket: "motomarket-37668.appspot.com",
+      messagingSenderId: "715586433513",
+      appId: "1:715586433513:web:34520927576e02111c5b78",
+      measurementId: "G-3FH4J49EM0"
+      
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const user = auth.currentUser;
+        const displayName = user.displayName
+        const uid = user.uid;
+
+        document.getElementById("nick").innerHTML = "<h5 class='fw-bold'><i class='fas fa-user'></i> "
+           + displayName + "</h5>";
+        document.getElementById("logout").innerHTML = "<h5 class='fw-bold'>Wyloguj<h5>";
+        document.getElementById("log&register").style.display = "none";
+        document.getElementById("use-links-createAcc").style.display = "none";
+      }
+      else {
+        document.getElementById("addAd").style.display = "none";
+        document.getElementById("use-links-myAcc").style.display = "none";
+        document.getElementById("use-links-addAd").style.display = "none";
+      }
+    });
+
+    logout.addEventListener('click', (e) => {
+      signOut(auth).then(() => {
+        alert("Wylogowano!");
+        window.location.href = "index.html";
+      }).catch((error) => {
+        const errorCode = error.code;
+      });
+    });
+    var tab = [];
+    var brand;
+    var model;
+    var kk;
+
+    const starCountRef = ref(database, 'ads/');
+    onValue(starCountRef, (snapshot) => {
+      snapshot.forEach(function (childSnapshot) {
+        var childData = childSnapshot.val();
+        tab.push(childData);
+      });
+      brand = [...new Set(tab.map(item => item.brand))];
+
+      for (const i of brand) {
+        var brandElement = `<option id="${i}">${i}</option>`;
+        $("#selectBrand").append(brandElement);
+      }
+
+      var sB = document.querySelector('#selectBrand');
+      sB.addEventListener('change', (e) => {
+        kk = event.target.value;
+        window.sessionStorage.setItem("currentBrand", kk);
+
+        model = [...new Set(tab.filter(item => item.brand == kk))];
+        model = [...new Set(model.map(item => item.model))];
+        $("#selectModel").empty();
+        $("#selectModel").append(`<option selected>Wybierz model</option>`);
+        if (document.getElementById("optionBrand").selected == true) {
+          document.getElementById("selectModel").setAttribute("disabled", "disabled");
+        }
+        else {
+          document.getElementById("selectModel").removeAttribute("disabled");
+          document.getElementById("selectModel").setAttribute("selected", "selected");
+          for (const i of model) {
+            var modelElement = `<option id="${i}">${i}</option>`;
+            $("#selectModel").append(modelElement);
+          }
+        }
+      })
+
+      var sM = document.querySelector('#selectModel');
+      sM.addEventListener('change', (e) => {
+        var m = event.target.value;
+        window.sessionStorage.setItem("currentModel", m);
+      })
+      var od = document.querySelector('#od');
+      od.addEventListener('change', (e) => {
+        var o = event.target.value;
+        window.sessionStorage.setItem("currentYearOd", o);
+      })
+      var dor = document.querySelector('#do');
+      dor.addEventListener('change', (e) => {
+        var d = event.target.value;
+        window.sessionStorage.setItem("currentYearDo", d);
+      })
+      var fuel = document.querySelector('#selectFuel');
+      fuel.addEventListener('change', (e) => {
+        var f = event.target.value;
+        window.sessionStorage.setItem("currentFuel", f);
+      })
+      var priceOd = document.querySelector("#filterPriceOd");
+      priceOd.addEventListener('change', (e) => {
+        var pOd = event.target.value;
+        window.sessionStorage.setItem("currentPriceOd", pOd);
+      })
+      var priceDo = document.querySelector("#filterPriceDo");
+      priceDo.addEventListener('change', (e) => {
+        var pDo = event.target.value;
+        window.sessionStorage.setItem("currentPriceDo", pDo);
+      })
+      var mileageOd = document.querySelector("#filterMileageOd");
+      mileageOd.addEventListener('change', (e) => {
+        var mOd = event.target.value;
+        window.sessionStorage.setItem("currentMileageOd", mOd);
+      })
+      var mileageDo = document.querySelector("#filterMileageDo");
+      mileageDo.addEventListener('change', (e) =>{
+        var mDo = event.target.value;
+        window.sessionStorage.setItem("currentMileageDo", mDo);
+      })
+
+
+      var searchBrand = window.sessionStorage.getItem("currentBrand");
+      var searchModel = window.sessionStorage.getItem("currentModel");
+      var searchYearOd = window.sessionStorage.getItem("currentYearOd");
+      var searchYearDo = window.sessionStorage.getItem("currentYearDo");
+      var searchFuel = window.sessionStorage.getItem("currentFuel");
+      var searchPriceOd = window.sessionStorage.getItem("currentPriceOd");
+      var searchPriceDo = window.sessionStorage.getItem("currentPriceDo");
+      var searchMileageOd = window.sessionStorage.getItem("currentMileageOd");
+      var searchMileageDo = window.sessionStorage.getItem("currentMileageDo");
+      var przefiltrowano;
+      if(searchBrand == null)
+      {
+        przefiltrowano = tab;
+      }
+      else
+      {
+        przefiltrowano = tab.filter(item => item.brand == searchBrand);
+        if(searchModel != null)
+        {
+          przefiltrowano = przefiltrowano.filter(item => item.model == searchModel);
+        }
+      }
+      if(searchYearOd != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.year >= searchYearOd);
+      }
+      if(searchYearDo != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.year <= searchYearDo);
+      }
+      if(searchFuel != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.fuelType == searchFuel);
+      }
+      if(searchPriceOd != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.price >= searchPriceOd);
+      }
+      if(searchPriceDo != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.price <= searchPriceDo);
+      }
+      if(searchMileageOd != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.mileage >= searchMileageOd);
+      }
+      if(searchMileageDo != null)
+      {
+        przefiltrowano = przefiltrowano.filter(item => item.mileage <= searchMileageDo);
+      }
+      
+      for (const i of przefiltrowano) {
+        var przefiltrowanoElement = 
+        `<li class="list-group-item" id="${i.key}">
+          <a href="singleAd.html"">
+          <div class="row pt-2 pb-2">
+            <div class="col-auto">
+              <img src="${i.url}" id="indexImage"></img>
+            </div>
+            <div class="col-auto">
+              <h5><strong>${i.brand} ${i.model}</strong></h5>
+              <div class="row">
+                <h6>${i.title}</h6>
+              </div>
+              <div class="row">
+                <h6>${i.year} &middot; ${i.mileage.toLocaleString()} km &middot; ${i.engineCapacity} cm<sup>3</sup> &middot; ${i.fuelType}</h6>
+              </div>
+              <div class="row">      
+                  <h6><i class="fas fa-map-marker-alt"></i> ${i.city}</h6>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <h4 class="text-danger">${i.price.toLocaleString()} PLN</h4>  
+            </div>
+          </div>
+        </a>
+      </li>`;
+      $("#list").append(przefiltrowanoElement);
+      list.lastChild.addEventListener('click', (e) => 
+      {
+        var g = event.currentTarget.id;
+        console.log(g);
+        localStorage.setItem("mar", g);
+      });
+      }
+      var length = przefiltrowano.length;
+      document.getElementById("dlugosc").innerHTML = "Znalezionych ogłoszeń - " + length;
+      window.sessionStorage.clear();
+    });
+
+
+  </script>
+</body>
+
+</html>
